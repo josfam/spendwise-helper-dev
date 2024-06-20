@@ -27,5 +27,5 @@ run this script
 
 To run the test in the test environment, run the provided script
 ```sh
-./run-app-in-test-env.sh
+./run_app_in_test_env.sh
 ```
