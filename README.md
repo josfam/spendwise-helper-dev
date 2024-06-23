@@ -20,7 +20,7 @@ Note: This script will create a python virtual environment and drop you into it
 To set up the (empty) test database, and test user in your MYSQL server,
 run this script
 ```sh
-./setup_mysqldb.sh
+./setup_mysqldb_user.sh
 ```
 
 ### Run the application in the test environment
