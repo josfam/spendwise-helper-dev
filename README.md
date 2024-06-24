@@ -23,9 +23,16 @@ run this script
 ./setup_mysqldb_user.sh
 ```
 
-### Run the application in the test environment
+### Run the application in the test environment (all tables are purged)
 
-To run the test in the test environment, run the provided script
+To run the application in the test environment, run the provided script
 ```sh
 ./run_app_in_test_env.sh
+```
+
+### Run the application in the dev environment (all tables persist)
+
+To run the application in the development environment, run the provided script
+```sh
+./run_app_in_dev_env.sh
 ```
