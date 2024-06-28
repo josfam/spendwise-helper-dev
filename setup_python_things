@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Install dependencies for MySQLdb
+sudo apt-get install -y python3-dev \
+libmysqlclient-dev \
+zlib1g-dev \
+python3-venv
+
+# create a virtual environment, and drop the current shell into it
+python3 -m venv spendwise-venv
+source spendwise-venv/bin/activate
+
+# install all project dependencies from the requirements.txt file
+if [[ -f requirements.txt ]]; then
+	rm requirements.txt
+fi
+
+wget https://raw.githubusercontent.com/Cnnb01/SpendWise/main/requirements.txt
+pip install -r requirements.txt
+
+# install other python packages
+pip install mysqlclient

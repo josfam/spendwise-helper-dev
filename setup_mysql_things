@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# set up test and development databases, and database user
+cat helpers/add_dbs_and_user.sql | sudo mysql
+
+# add categories to the development db (persistent)
+cat helpers/add_dbs_and_users.sql | sudo mysql

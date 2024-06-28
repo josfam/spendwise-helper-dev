@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# check that a commandline argument was provided
+if [ $# -lt 1 ]; then
+	echo "You probably forgot to specify either 'dev' or 'test'"
+	echo "Usage: ./run_app_in_env [dev|test]"
+	exit
+fi
+
+# check that the provided commadline argument is spelled correctly
+env=$1
+if [ "$env" != "dev" ] && [ "$env" != "test" ]; then
+	echo "Check your spellings. Provide either 'dev' or 'test'"
+	echo "Usage: ./run_app_in_env [dev|test]"
+	exit
+fi
+
+# Print useful info about the environment chosen, and set up useful variables
+description=""
+db_to_use=""
+
+if [ "$env" = "dev" ]; then
+	description="(all your database changes will be saved)"
+else
+	description="(all your database changes will be PURGED!)"
+fi
+echo "Running in $env environment $description"
+
+SPENDWISE_ENV="$env" \
+SPENDWISE_MYSQL_USER=spendwise_test_user \
+SPENDWISE_MYSQL_PWD='' \
+SPENDWISE_MYSQL_HOST=localhost \
+SPENDWISE_MYSQL_DB="spendwise_$env" \
+./run.py

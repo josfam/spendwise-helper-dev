@@ -11,36 +11,32 @@ that are not necessarily part of the main project
 
 To set up your python development environment, source provided script
 ```sh
-source setup_python_dev_environment.sh
+source setup_python_things
 ```
 Note: This script will create a python virtual environment and drop you into it
 
-### 🗃️ Initial setup of the database and database user
+### 🗃️ Initial setup of the databases and database user
 
-To set up the (empty) test database, and test user in your MYSQL server,
+To set up the (empty) test and development databases, and test user in your MYSQL server,
 run this script
 ```sh
-./setup_mysqldb_user.sh
+./setup_mysql_things
 ```
 
-### 🧪⚗️ Run the application in the test environment (all tables are purged)
+### 🧪🗜️ Run the application in a specified environment (either `test` or `dev`)
 
 Note: You will have to run this script from inside the main spendwise repository.
 \
-(You can copy this script to the root of the main repo first)
+(You can copy this script to the root of the spendwise repo first)
 
-To run the application in the test environment, run the provided script
+#### To run the application in the test environment, run
+
 ```sh
-./run_app_in_test_env.sh
+./run_app_in_env test
 ```
 
-### 🗜️ Run the application in the dev environment (all tables persist)
+#### To run the application in the development environment, run
 
-Note: You will have to run this script from inside the main spendwise repository.
-\
-(You can copy this script to the root of the main repo first)
-
-To run the application in the development environment, run the provided script
 ```sh
-./run_app_in_dev_env.sh
+./run_app_in_env dev
 ```
