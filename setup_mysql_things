@@ -3,4 +3,4 @@
 cat helpers/add_dbs_and_user.sql | sudo mysql
 
 # add categories to the development db (persistent)
-cat helpers/add_dbs_and_users.sql | sudo mysql
+cat helpers/add_categories.sql | sudo mysql

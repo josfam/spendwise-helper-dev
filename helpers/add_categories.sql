@@ -1,5 +1,5 @@
 -- Use test db
-USE `spendwise_test`;
+USE `spendwise_dev`;
 -- Add three categories to the database
 INSERT INTO `categories` (Id, categoryName)
 VALUES
