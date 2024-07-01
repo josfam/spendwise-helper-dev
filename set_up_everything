@@ -3,7 +3,24 @@
 git clone https://github.com/josfam/spendwise-helper-dev.git
 cd spendwise-helper-dev
 
-# leave and cleanup files
+# install python packages, and create virtual env
+./setup_python_things
+
+# create a virtual environment, and drop the current shell into it
+python3 -m venv spendwise-venv
+source spendwise-venv/bin/activate
+
+# install other python packages
+pip install mysqlclient
+
+# install project dependencies from the requirements file
+wget https://raw.githubusercontent.com/Cnnb01/SpendWise/main/requirements.txt
+pip install -r requirements.txt
+
+# set up the databases and users
+./setup_mysql_things
+
+# leave the repo directory and cleanup all script-downloaded files
 echo "Done."
 echo "Cleaning up files..."
 sleep 1
