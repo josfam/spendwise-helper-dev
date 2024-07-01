@@ -7,6 +7,11 @@ cd spendwise-helper-dev
 ./setup_python_things
 
 # create a virtual environment, and drop the current shell into it
+# remove the current venv if it exists
+if [ -d spendwise-venv ]; then
+	sudo rm -r spendwise-venv
+fi
+
 python3 -m venv spendwise-venv
 source spendwise-venv/bin/activate
 
