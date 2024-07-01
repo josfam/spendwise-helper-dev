@@ -5,8 +5,9 @@ cd spendwise-helper-dev
 
 # leave and cleanup files
 echo "Done."
-sleep(1)
+sleep 1
 echo "Cleaning up files..."
+sleep 1
 cd ..
 sudo rm -r spendwise-helper-dev
 sudo rm set_up_everything
