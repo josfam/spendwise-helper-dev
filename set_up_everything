@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
-# clone the spendwise helper dev repo and cd into it.
+# clone the spendwise helper dev repo.
 git clone https://github.com/josfam/spendwise-helper-dev.git
-cd spendwise-helper-dev
 
-# install python packages, and create virtual env
-./setup_python_things
-
-# create a virtual environment, and drop the current shell into it
-# remove the current venv if it exists
-if [ -d spendwise-venv ]; then
+# remove the current virtual environment if it already exists
+if [ -d "spendwise-venv" ]; then
 	sudo rm -r spendwise-venv
 fi
 
+# create a new virtual environment, and drop the current shell into it
 python3 -m venv spendwise-venv
 source spendwise-venv/bin/activate
 
-# install other python packages
+cd spendwise-helper-dev
+# install python packages
+./setup_python_things
 pip install mysqlclient
 
 # install project dependencies from the requirements file
