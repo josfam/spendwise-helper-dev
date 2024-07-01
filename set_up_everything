@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# clone the spendwise helper dev repo and cd into it.
+git clone https://github.com/josfam/spendwise-helper-dev.git
+
+cd spendwise-helper-dev
