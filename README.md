@@ -5,7 +5,31 @@ that are not necessarily part of the main project
 
 ---
 
-## dev setup
+## dev setup (linux)
+
+There are two ways you can choose to set up your development environment:
+
+- Using the all-in-one automated script that will save you time, but does require an internet
+  connection
+
+- Doing most of the work yourself
+
+## Using the all-in-one script
+
+To use the all in one script, first navigate to the root of your cloned spendwise
+repository, and run this command:
+
+```sh
+rm -f set_up_everything \
+&& wget \
+https://raw.githubusercontent.com/josfam/spendwise-helper-dev/main/set_up_everything \
+&& sudo chmod +x set_up_everything \
+&& source ./set_up_everything
+```
+
+Once the script's done, you are also done.
+
+## Doing everything yourself
 
 ### 🐍 Initial setup of your python development environment
 
