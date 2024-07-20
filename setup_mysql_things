@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# purge all databases if requested.
+if [ $# -eq 1 ] && [ "$1" == "--purge-old" ]; then
+	echo "Purging all old databases!"
+	echo "DROP DATABASE IF EXISTS spendwise_dev;" | sudo mysql
+	echo "DROP DATABASE IF EXISTS spendwise_test;" | sudo mysql
+fi
+
 # set up test and development databases, and database user
 cat helpers/add_dbs_and_user.sql | sudo mysql
 
